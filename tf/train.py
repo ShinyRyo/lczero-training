@@ -38,11 +38,11 @@ def get_all_chunks(path):
         print("getting chunks for", path)
         chunks = []
         for i in path:
-            chunks += get_all_chunks(i)
+            chunks.append(get_all_chunks(i))
         return chunks
     chunks = []
     for d in glob.glob(path):
-        chunks += get_chunks(d)
+        chunks.append(get_chunks(d))
     print("got", len(chunks), "chunks for", path)
     return chunks
 
@@ -54,7 +54,7 @@ def get_latest_chunks(path, num_chunks, allow_less, sort_key_fn):
             print("sorting {} chunks...".format(len(chunks)),
                   end='',
                   flush=True)
-            chunks.sort(key=sort_key_fn, reverse=True)
+            chunks.sort(reverse=True)
             print("[done]")
             print("{} - {}".format(os.path.basename(chunks[-1]),
                                    os.path.basename(chunks[0])))
