@@ -44,7 +44,7 @@ def get_all_chunks(path):
     for d in glob.glob(path):
         chunks.append(get_chunks(d))
     print("got", len(chunks), "chunks for", path)
-    return chunks
+    return chunks #num_chunks以上にする
 
 
 def get_latest_chunks(path, num_chunks, allow_less, sort_key_fn):
@@ -84,7 +84,7 @@ def game_number_for_name(name):
 
 
 def get_input_mode(cfg):
-    import proto.net_pb2 as pb
+    import proto4rl.net_pb2 as pb
     input_mode = cfg['model'].get('input_type', 'classic')
 
     if input_mode == "classic":
