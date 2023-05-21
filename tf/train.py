@@ -65,11 +65,10 @@ def get_latest_chunks(path, num_chunks, allow_less, sort_key_fn):
             sys.exit(1)
 
     print("sorting {} chunks...".format(len(chunks)), end='', flush=True)
-    chunks.sort(key=sort_key_fn, reverse=True)
+    chunks.sort(reverse=True)
     print("[done]")
     chunks = chunks[:num_chunks]
-    print("{} - {}".format(os.path.basename(chunks[-1]),
-                           os.path.basename(chunks[0])))
+    print(f"{os.path.basename(chunks[-1])} - {os.path.basename(chunks[0])}")
     random.shuffle(chunks)
     return chunks
 
