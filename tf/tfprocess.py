@@ -24,7 +24,7 @@ import time
 import bisect
 import lc0_az_policy_map
 import attention_policy_map as apm
-import proto.net_pb2 as pb
+import proto4rl.net_pb2 as pb
 from functools import reduce
 import operator
 
