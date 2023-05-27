@@ -44,7 +44,7 @@ def get_all_chunks(path):
     for d in glob.glob(path):
         chunks.append(get_chunks(d))
     print("got", len(chunks), "chunks for", path)
-    return chunks #num_chunks以上にする
+    return chunks[0] #num_chunks以上にする
 
 
 def get_latest_chunks(path, num_chunks, allow_less, sort_key_fn):
