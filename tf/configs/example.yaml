@@ -10,7 +10,7 @@ dataset:
   # input_train: '/path/to/chunks/*/draw/' # supports glob
   # input_test: '/path/to/chunks/*/draw/'  # supports glob
   # For a one-shot run with all data in one directory.
-  input: '/content/trainingdata/*.gz'
+  input: '/content/trainingdata/'
 
 training:
     batch_size: 2048                   # training batch

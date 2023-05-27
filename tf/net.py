@@ -56,7 +56,7 @@ class Net:
 
     def set_networkformat(self, net):
         self.pb.format.network_format.network = net
-        if net == pb.NetworkFormat.NETWORK_ATTENTIONBODY_WITH_HEADFORMAT \
+        if net == pb.NetworkFormat.NETWORK_CLASSICAL_WITH_HEADFORMAT \
                 and self.pb.min_version.minor < LC0_MINOR_WITH_ATTN_BODY:
             self.pb.min_version.minor = LC0_MINOR_WITH_ATTN_BODY
 
